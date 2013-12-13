@@ -1,6 +1,5 @@
 package com.test.skill;
 
-import com.test.hero.Hero;
 
 
 public class Skill {
