@@ -17,9 +17,6 @@ public class Battle {
 //		Hero hero3 = new Hero();
 		hero1.attack(hero2);
 		hero1.attack(hero2);
-		hero1.attack(hero2);
-		hero1.attack(hero2);
-		hero1.attack(hero2);
 //		hero1.attack(hero2);
 //		hero2.attack(hero1);
 //		hero1.addEnermy(hero2);

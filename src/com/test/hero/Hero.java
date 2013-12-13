@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import com.test.skill.Skill;
 import com.test.skill.SkillAggregation;
 import com.test.skill.damage.Damage;
+import com.test.skill.effect.Effect;
+import com.test.skill.effect.Effect;
 
 
 
@@ -24,13 +26,12 @@ public class Hero implements INature{
 
 	public void attack(Hero enermy) {
 		if(this.lifeState.isAlive()&&enermy.lifeState.isAlive()){
-			damage.setAttacker(this);
-			enermy.hurted(damage);
+			AttackMethedRequest attack = new AttackMethedRequest(this);
+			attack.attack(enermy);
 		}
 	}
-	public void hurted(Damage damage) {
-		damage.setInjurer(this);
-		damage.creazyBeat();
+	public void hurted(int physical_damage, int magic_damage,Effect effect) {
+//		damage.creazyBeat();
 	}
 
 	

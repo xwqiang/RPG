@@ -2,12 +2,10 @@ package com.test.skill;
 
 
 
-public class Skill {
+public class Skill implements ISkill{
 	private String name;
-	private int ready;	//cd 时间 ready = -1 表示被动技能
+	private int ready;	//技能cd时间 ready = -1 表示被动技能
 	private boolean using;
-	private int added;
-	private int rated;
 	public int getReady() {
 		return ready;
 	}
@@ -27,6 +25,9 @@ public class Skill {
 		this.name = name;
 	}
 	public int getPhysicalDamage() {
+		return 0;
+	}
+	public int getMagicDamage(){
 		return 0;
 	}
 	

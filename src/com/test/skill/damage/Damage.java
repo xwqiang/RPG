@@ -18,9 +18,6 @@ public class Damage {
 		injurer.getLifeState().reduceBlood(base_harm + physical_damage);
 		return base_damage + physical_damage + magic_damage;
 	}
-	private int magicDamage() {
-		return 0;
-	}
 	public int physicalDamage(){
 		int physical_damage = 0 ;
 		for(Skill sk : attacker.getSkillAggregation().getUsableSkill()){
@@ -28,7 +25,9 @@ public class Damage {
 		}
 		return physical_damage;
 	}
-	
+	public int magicDamage(){
+		return 0;
+	}
 	public Hero getInjurer() {
 		return injurer;
 	}
@@ -40,6 +39,12 @@ public class Damage {
 	}
 	public void setAttacker(Hero attacker) {
 		this.attacker = attacker;
+	}
+	public int getBase_harm() {
+		return base_harm;
+	}
+	public void setBase_harm(int base_harm) {
+		this.base_harm = base_harm;
 	}
 	
 	

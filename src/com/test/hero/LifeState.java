@@ -18,6 +18,7 @@ public class LifeState {
 	public void reduceBlood(int damage){
 		this.setBlood(this.blood - damage);
 	}
+	
 	public void addBlood(int blood){
 		this.setBlood(this.blood + blood);
 	}
