@@ -30,6 +30,13 @@ public class SkillAggregation {
 		skills.add(skill);
 	}
 	public void useSkill(Skill skill) {
+		boolean include = true;
+		for(Skill s :skills){
+			if(skill.getClass().getName().equals(s.getClass().getName())){
+				include = false;
+			}
+		}
+		if(!include){ return; }
 		for(Skill sk : skills){
 			sk.setUsing(false);
 		}

@@ -15,6 +15,7 @@ public class AttackMethedRequest {
 		}
 		Damage damage = hero.getDamage();
 		damage.setSkills(hero.getSkillAggregation());
+//		for(Skill sk : h)
 		int base_damage = (int) (Math.random()*5+damage.getBase_harm());
 		int physical_damage = damage.getPhysical_harm() + base_damage;
 		int magic_damage = damage.getMagic_harm();

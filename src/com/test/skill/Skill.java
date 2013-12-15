@@ -30,5 +30,11 @@ public class Skill implements ISkill{
 	public int getMagicDamage(){
 		return 0;
 	}
+	public int getHarmAdded() {
+		return 0;
+	}
+	public int getHarmRated() {
+		return 0;
+	}
 	
 }

@@ -1,5 +1,6 @@
 package com.test.skill.damage;
 
+import com.test.skill.Skill;
 import com.test.skill.SkillAggregation;
 import com.test.skill.effect.Effect;
 
@@ -20,6 +21,9 @@ public class Damage {
 		this.base_harm = base_harm;
 	}
 	public int getPhysical_harm() {
+		for(Skill sk : skills.getUsableSkill()){
+			
+		}
 		return physical_harm;
 	}
 	public void setPhysical_harm(int physical_harm) {

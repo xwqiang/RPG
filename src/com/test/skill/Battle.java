@@ -13,6 +13,7 @@ public class Battle {
 		// TODO Auto-generated method stub
 		Hero hero1 = new Hero();
 		Hero hero2 = new Hero();
+		hero1.addSkill(new Thump());
 		hero2.getLifeState().setBlood(50);
 //		Hero hero3 = new Hero();
 		hero1.attack(hero2);
