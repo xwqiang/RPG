@@ -1,5 +1,6 @@
 package com.test.hero;
 
+import com.test.skill.damage.Damage;
 import com.test.skill.effect.Effect;
 
 public class AttackMethedRequest {
@@ -9,11 +10,16 @@ public class AttackMethedRequest {
 		this.hero = hero;
 	}
 	public void attack(Hero enermy){
-		int base_damage = (int) (Math.random()*5+this.hero.getDamage().getBase_harm());
-		int physical_damage = this.hero.getDamage().physicalDamage() + base_damage;
-		int magic_damage = this.hero.getDamage().magicDamage();
-		Effect effect = new Effect();
-		
+		if(!hero.beforAttack()){
+			return;
+		}
+		Damage damage = hero.getDamage();
+		damage.setSkills(hero.getSkillAggregation());
+		int base_damage = (int) (Math.random()*5+damage.getBase_harm());
+		int physical_damage = damage.getPhysical_harm() + base_damage;
+		int magic_damage = damage.getMagic_harm();
+		Effect effect = damage.getEffect();
 		enermy.hurted(physical_damage, magic_damage, effect);
+		hero.afterAttack();
 	}
 }

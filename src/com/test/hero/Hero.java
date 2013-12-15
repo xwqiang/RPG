@@ -6,7 +6,6 @@ import com.test.skill.Skill;
 import com.test.skill.SkillAggregation;
 import com.test.skill.damage.Damage;
 import com.test.skill.effect.Effect;
-import com.test.skill.effect.Effect;
 
 
 
@@ -26,12 +25,12 @@ public class Hero implements INature{
 
 	public void attack(Hero enermy) {
 		if(this.lifeState.isAlive()&&enermy.lifeState.isAlive()){
-			AttackMethedRequest attack = new AttackMethedRequest(this);
-			attack.attack(enermy);
+			AttackMethedRequest attackMR = new AttackMethedRequest(this);
+			attackMR.attack(enermy);
 		}
 	}
 	public void hurted(int physical_damage, int magic_damage,Effect effect) {
-//		damage.creazyBeat();
+		System.out.println("physical_damage->"+physical_damage);
 	}
 
 	
@@ -75,6 +74,14 @@ public class Hero implements INature{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean beforAttack() {
+		return true;
+	}
+
+	public boolean afterAttack() {
+		return true;
 	}
 	
 	
