@@ -23,10 +23,10 @@ public class Battle {
 		roshan.addSkill(new Thump());
 		hero2.getLifeState().setBlood(300);
 //		Hero hero3 = new Hero();
-		int times = 15;
-		while(times > 0 && hero2.getLifeState().isAlive()){
+		int attack_times = 15;
+		while(attack_times > 0 && hero2.getLifeState().isAlive()){
 			if(roshan.attack(hero2)){
-				times--;
+				attack_times--;
 			}
 		}
 //		hero1.attack(hero2);

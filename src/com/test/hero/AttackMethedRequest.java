@@ -12,7 +12,7 @@ public class AttackMethedRequest {
 	public boolean attack(Hero enermy){
 		if(!hero.beforAttack(enermy)){ return false;}
 		
-		System.err.println(hero.getName()+" start to attack "+enermy.getName());
+		System.err.println("<" + hero.getName() + "> started to attack <"+enermy.getName() + ">");
 		Damage damage = hero.getDamage();
 		damage.setSkills(hero.getSkillAggregation());
 		int base_damage = damage.strick();

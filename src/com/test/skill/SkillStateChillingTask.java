@@ -4,11 +4,11 @@ import java.util.TimerTask;
 
 import com.test.hero.Hero;
 
-public class SkillStateThread extends TimerTask {
+public class SkillStateChillingTask extends TimerTask {
 	private int reduce ;
 	private Hero hero ;
 	private int attack_timeout ;
-	public SkillStateThread(int reduce,Hero hero){
+	public SkillStateChillingTask(int reduce,Hero hero){
 		this.reduce = reduce;
 		this.hero  = hero ;
 	}
