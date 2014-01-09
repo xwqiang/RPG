@@ -5,7 +5,7 @@ import com.test.skill.effect.Effect;
 
 public interface INature {
 	
-	public void attack(Hero enermy);
+	public boolean attack(Hero enermy);
 	
 	public void hurted(int physical_damage, int magic_damage,Effect effect);
 	

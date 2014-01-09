@@ -9,18 +9,18 @@ public class AttackMethedRequest {
 	public AttackMethedRequest(Hero hero) {
 		this.hero = hero;
 	}
-	public void attack(Hero enermy){
-		if(!hero.beforAttack()){
-			return;
-		}
+	public boolean attack(Hero enermy){
+		if(!hero.beforAttack(enermy)){ return false;}
+		
+		System.err.println(hero.getName()+" start to attack "+enermy.getName());
 		Damage damage = hero.getDamage();
 		damage.setSkills(hero.getSkillAggregation());
-//		for(Skill sk : h)
-		int base_damage = (int) (Math.random()*5+damage.getBase_harm());
+		int base_damage = damage.strick();
 		int physical_damage = damage.getPhysical_harm() + base_damage;
 		int magic_damage = damage.getMagic_harm();
 		Effect effect = damage.getEffect();
 		enermy.hurted(physical_damage, magic_damage, effect);
 		hero.afterAttack();
+		return true;
 	}
 }

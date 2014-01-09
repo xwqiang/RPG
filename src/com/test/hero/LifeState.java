@@ -1,8 +1,9 @@
 package com.test.hero;
 
 public class LifeState {
-	protected int blood;
+	private int blood;
 	private boolean alive;
+	private int armor;
 	public LifeState(){
 		this.blood = 220;
 		this.alive = true;

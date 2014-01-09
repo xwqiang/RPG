@@ -16,21 +16,25 @@ public class Hero implements INature{
 	protected SkillAggregation skillAggregation;
 	protected Damage damage;
 	
-	public Hero() {
-		this.name = "hero";
+	public Hero(String name) {
+		this.name = name;
 		this.lifeState = new LifeState();
 		this.skillAggregation = new SkillAggregation(new ArrayList<Skill>());
 		this.damage = new Damage(20);
 	}
-
-	public void attack(Hero enermy) {
-		if(this.lifeState.isAlive()&&enermy.lifeState.isAlive()){
-			AttackMethedRequest attackMR = new AttackMethedRequest(this);
-			attackMR.attack(enermy);
-		}
+	
+	public boolean attack(Hero enermy) {
+		AttackMethedRequest attackMR = new AttackMethedRequest(this);
+		return attackMR.attack(enermy);
 	}
 	public void hurted(int physical_damage, int magic_damage,Effect effect) {
-		System.out.println("physical_damage->"+physical_damage);
+		lifeState.reduceBlood(physical_damage+magic_damage);
+		if(lifeState.isAlive()){
+			System.out.println(name+"get hurted :physical_damage->"+physical_damage+" magic_damage-->"+magic_damage+" ");
+		}else{
+			System.out.println(name+"get hurted :physical_damage->"+physical_damage+" magic_damage-->"+magic_damage+" ");
+			System.out.println(name + " is beaten dead");
+		}
 	}
 
 	
@@ -76,7 +80,17 @@ public class Hero implements INature{
 		this.name = name;
 	}
 
-	public boolean beforAttack() {
+	public boolean beforAttack(Hero enermy) {
+		//enery is dead
+		if(!enermy.getLifeState().isAlive()){
+			System.err.println(name + " is dead and can't attack");
+			return false;
+		}
+		//your skill is not ready
+		if(damage.getAttack_timeout()>0){
+//			System.err.println("waiting for ready your skills");
+			return false;
+		}
 		return true;
 	}
 

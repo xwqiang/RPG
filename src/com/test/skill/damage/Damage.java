@@ -6,12 +6,34 @@ import com.test.skill.effect.Effect;
 
 public class Damage {
 	private int base_harm;
+	private int attack_speed;//millisecond
+	private int attack_timeout;
+	private int base_attack_timeout;
+	
 	private int physical_harm;
+	
 	private int magic_harm;
 	private Effect effect;
 	private SkillAggregation skills;
 	
+	
+	public int getAttack_timeout() {
+		return attack_timeout;
+	}
+	public void setAttack_timeout(int attack_timeout) {
+		this.attack_timeout = attack_timeout;
+	}
+	public void reweapon(){
+		this.attack_timeout = base_attack_timeout;
+	}
+	public int getAttack_speed() {
+		return attack_speed;
+	}
+	public void setAttack_speed(int attack_speed) {
+		this.attack_speed = attack_speed;
+	}
 	public Damage(int base_harm) {
+		attack_speed = 2000;
 		this.base_harm = base_harm;
 	}
 	public int getBase_harm() {
@@ -46,6 +68,17 @@ public class Damage {
 	}
 	public void setSkills(SkillAggregation skills) {
 		this.skills = skills;
+	}
+	public int strick() {
+		int harm = (int) (Math.random()*15+this.getBase_harm());
+		reweapon();
+		return harm;
+	}
+	public int getBase_attack_timeout() {
+		return base_attack_timeout;
+	}
+	public void setBase_attack_timeout(int base_attack_timeout) {
+		this.base_attack_timeout = base_attack_timeout;
 	}
 	
 ////	private Hero injurer;//被攻击者
