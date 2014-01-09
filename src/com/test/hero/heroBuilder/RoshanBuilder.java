@@ -1,5 +1,6 @@
-package com.test.hero;
+package com.test.hero.heroBuilder;
 
+import com.test.hero.Hero;
 import com.test.skill.Thump;
 
 public class RoshanBuilder extends HeroBuilder {

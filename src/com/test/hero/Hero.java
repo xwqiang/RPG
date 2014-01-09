@@ -81,14 +81,14 @@ public class Hero implements INature{
 	}
 
 	public boolean beforAttack(Hero enermy) {
-		//enery is dead
+		//enermy is dead
 		if(!enermy.getLifeState().isAlive()){
 			System.err.println(name + " is dead and can't attack");
 			return false;
 		}
 		//your skill is not ready
-		if(damage.getAttack_timeout()>0){
-//			System.err.println("waiting for ready your skills");
+		if(damage.getAttack_timeout() > 0){
+//			System.err.println("invalid attack , waiting for ready your skills");
 			return false;
 		}
 		return true;

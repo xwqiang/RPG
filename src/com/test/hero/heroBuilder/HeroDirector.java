@@ -1,4 +1,4 @@
-package com.test.hero;
+package com.test.hero.heroBuilder;
 
 public class HeroDirector {
 	 public void createHero(HeroBuilder concreteBuilder){  

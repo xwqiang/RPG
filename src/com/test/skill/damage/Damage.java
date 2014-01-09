@@ -7,7 +7,7 @@ import com.test.skill.effect.Effect;
 public class Damage {
 	private int base_harm;
 	private int attack_speed;//millisecond
-	private int attack_timeout;
+	private volatile int attack_timeout;
 	private int base_attack_timeout;
 	
 	private int physical_harm;

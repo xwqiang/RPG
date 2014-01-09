@@ -1,9 +1,10 @@
-package com.test.skill;
+package com.test.launch;
 
 import com.test.hero.Hero;
-import com.test.hero.HeroBuilder;
-import com.test.hero.HeroDirector;
-import com.test.hero.RoshanBuilder;
+import com.test.hero.heroBuilder.HeroBuilder;
+import com.test.hero.heroBuilder.HeroDirector;
+import com.test.hero.heroBuilder.RoshanBuilder;
+import com.test.skill.Thump;
 
 
 
@@ -20,9 +21,9 @@ public class Battle {
 		Hero roshan = roshanBuilder.getHero();
 		Hero hero2 = new Hero("play2");
 		roshan.addSkill(new Thump());
-		hero2.getLifeState().setBlood(1000);
+		hero2.getLifeState().setBlood(300);
 //		Hero hero3 = new Hero();
-		int times = 5;
+		int times = 15;
 		while(times > 0 && hero2.getLifeState().isAlive()){
 			if(roshan.attack(hero2)){
 				times--;

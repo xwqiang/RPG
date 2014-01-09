@@ -1,7 +1,8 @@
-package com.test.hero;
+package com.test.hero.heroBuilder;
 
 import java.util.Timer;
 
+import com.test.hero.Hero;
 import com.test.skill.SkillStateThread;
 
 public abstract class HeroBuilder {  
